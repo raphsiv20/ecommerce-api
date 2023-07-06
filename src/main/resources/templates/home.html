@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link th:href="@{/css/script.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg" style="background-color: #b5b5c2;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" th:href="@{/home}">RAPH-INFO</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Compte
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/log}">Connexion</a></li>
+                        <li><a class="dropdown-item" th:href="@{/createAccount}">Créer un compte</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search" action="">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<h1 th:text="${message1}" class="text-center"/>
+<h3 th:text="${message2}" class="text-center"/>
+
+
+
+<!-- Carousel -->
+<div id="demo" class="carousel slide" style="height: 800px;"  data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner bg-dark">
+        <div class="carousel-item active">
+            <img th:src="@{/static/images/iphone14.jfif}" alt="Los Angeles" class="d-block" style="height: 800px; width:100%">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+            </div>
+        </div>
+        <div class="carousel-item bg-dark">
+            <img th:src="@{/static/images/iphone14.jfif}" alt="Chicago" class="d-block" style="height: 800px; width:100%">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+            </div>
+        </div>
+        <div class="carousel-item bg-dark">
+            <img th:src="@{/static/images/iphone14.jfif}" alt="New York" class="d-block" style="height: 800px; width:100%">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<div class="ecommerce-footer-top">
+    <div class="ecommerce-footer-top-container">
+        <div class="ecommerce-footer-top-row">
+            <div class="ecommerce-footer-top-content-left">
+                <div class="ecommerce-footer-top-content-inner">
+                    <div class="ecommerce-main-page-title-separator">
+                        <h3>Contactez-nous</h3>
+                        <hr>
+                    </div>
+                    <h4>Vous avez des questions ou besoin d'informations ?</h4>
+                    <p>Vous pouvez nous contacter par email, formulaire de contact ou par téléphone</p>
+                    <div class="ecommerce-footer-top-content-inner-row">
+                        <div class="ecommerce-footer-top-content-inner-contact">
+
+                            <address>
+                                <a href="mailto:contact@lereposdubaigneur.fr">
+                                    <i class="material-icons-outlined">mail</i>
+                                    <span>contact@le-repos-du-baigneur.fr</span>
+                                </a>
+                                <a href="tel:+33679976670">
+                                    <i class="material-icons-outlined">phone</i>
+                                    <span>06 79 97 66 70</span>
+                                </a>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ecommerce-footer-top-content-middle">
+                <div class="ecommerce-footer-top-content-inner">
+                    <div class="ecommerce-main-page-title-separator">
+                        <h3>Accès au Repos du Baigneur</h3>
+                        <hr>
+                    </div>
+                    <p>Profitez d'un cadre calme, apaisant et reposant à seulement 800 m de la plage.
+                        Passez de merveilleuses vacances en famille avec une aire de jeux pour les enfants.
+                        De nombreuses activités sont également proposées comme :</p>
+                    <ul>
+                        <li>Le ping pong</li>
+                        <li>La pétanque</li>
+                        <li>Le football</li>
+                        <li>Une salle de jeux</li>
+                        <li>Une salle vidéo</li>
+                    </ul>
+
+                    <p>Des services sont proposés, comme :</p>
+                    <ul>
+                        <li>Le dépôt de pain</li>
+                        <li>Le snack bar</li>
+                        <li>L'accès au wifi gratuit</li>
+                        <li>Le centre commercial à 100m</li>
+                        <li>La rue piétonne à 800m</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ecommerce-footer-top-content-right">
+                <div class="ecommerce-footer-top-content-inner">
+                    <div class="ecommerce-main-page-title-separator">
+                        <h3>Retrouvez-nous aussi</h3>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ecommerce-footer-bottom">
+    <div class="ecommerce-footer-bottom">
+        <div class="ecommerce-footer-bottom-container">
+            <div class="ecommerce-footer-bottom-row">
+                <div class="ecommerce-footer-bottom-content">
+                    <div class="ecommerce-footer-bottom-content-inner">
+                        <span>© 2023 Le Repos du Baigneur Tous droits réservés</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

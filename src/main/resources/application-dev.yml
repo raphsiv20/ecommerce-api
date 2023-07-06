@@ -1,0 +1,32 @@
+auth0:
+  audience: https://dev-kokskw5a0uvqw0cp.eu.auth0.com/api/v2/
+debug: false
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    hibernate.ddl-auto: update
+    show-sql: true
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ecommerce_bdd
+    username: postgres
+    password: root
+  security:
+    user:
+      name: user
+      password: password
+    oauth2:
+      resource-server:
+        jwt:
+          jws-algorithms: RS256
+          issuer-uri: https://dev-kokskw5a0uvqw0cp.eu.auth0.com/
+          jwk-set-uri: https://dev-kokskw5a0uvqw0cp.eu.auth0.com/.well-known/jwks.json
+          audiences: https://dev-kokskw5a0uvqw0cp.eu.auth0.com/api/v2/
+
+
+
+
+
+
+

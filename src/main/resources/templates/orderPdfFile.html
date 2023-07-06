@@ -1,0 +1,51 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Résumé de la commande</title>
+  <link rel="stylesheet" th:href="@{classpath:/static/css/style.css}" />
+</head>
+<body>
+<h1>Résumé de la commande</h1>
+
+<div class="company-info">
+  <h2>RAPH-INFO</h2>
+  <p>Za Basso Cambo 15 av Doct Maurice Grynfogel, 31100 Toulouse</p>
+  <!-- Autres informations sur l'entreprise -->
+</div>
+
+<div class="user-info">
+  <h2>Informations sur l'utilisateur</h2>
+  <p><strong>Email :</strong> <span th:text="${user.getUserEmail()}"></span></p>
+
+</div>
+
+<div class="order-summary">
+  <h2>Détails de la commande</h2>
+  <p><strong>Numéro de commande :</strong> <span th:text="${orderInfos.getOrderId()}"></span></p>
+  <p><strong>Date de commande :</strong> <span th:text="${orderInfos.getOrderDate()}"></span></p>
+
+  <h2>Articles commandés</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Article</th>
+      <th>Prix Unitaire (€)</th>
+      <th>Quantité</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${orderItems}">
+      <td th:text="${item.getProduct().getProductName()}"></td>
+      <td th:text="${item.getProduct().getProductPrice()}">€</td>
+      <td th:text="${item.getQuantity()}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <h2>Total de la commande</h2>
+  <p><strong>Nombre d'articles :</strong> <span th:text="${orderInfos.getOrderQuantity()}"></span></p>
+  <p><strong>Prix total :</strong> <span th:text="${orderInfos.getOrderPrice()}"></span>€</p>
+</div>
+</body>
+</html>
